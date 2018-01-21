@@ -1,0 +1,137 @@
+<InsightMakerModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Setting Note="" Version="36" TimeLength="20" TimeStart="0" TimeStep="1" TimeUnits="Years" StrictUnits="true" StrictLinks="true" StrictAgentResolution="true" Units="" HiddenUIGroups="Validation,User Interface" SolutionAlgorithm="RK1" BackgroundColor="white" Throttle="1" Macros="" SensitivityPrimitives="" SensitivityRuns="50" SensitivityBounds="50, 80, 95, 100" SensitivityShowRuns="false" article="{&quot;comments&quot;:true, &quot;facebookUID&quot;: &quot;&quot;}" StyleSheet="{}" id="2">
+      <mxCell parent="1" vertex="1" visible="0">
+        <mxGeometry x="20" y="20" width="80" height="40" as="geometry"/>
+      </mxCell>
+    </Setting>
+    <Display name="Bathtub2" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="%o" ThreeDimensional="false" Primitives="64,65,66,67,73" AutoAddPrimitives="true" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" yAxis2="" Primitives2="" showMarkers="false" showLines="true" showArea="false" legendPosition="None" id="3">
+      <mxCell style="roundImage;image=/builder/images/DisplayFull.png;" parent="1" vertex="1" visible="0">
+        <mxGeometry x="50" y="20" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Stock name="Bathtub" Note="" InitialValue="0" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" oldId="55" id="55">
+      <mxCell style="stock" vertex="1" parent="1">
+        <mxGeometry x="980" y="100" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Flow name="Flow" Note="" FlowRate="1" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" oldId="56" id="56">
+      <mxCell style="flow" edge="1" parent="1" target="55">
+        <mxGeometry x="740" y="20" width="100" height="100" as="geometry">
+          <mxPoint x="770" y="120" as="sourcePoint"/>
+          <mxPoint x="740" y="120" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Stock name="Savings Account" Note="" InitialValue="50" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="57">
+      <mxCell style="stock" vertex="1" parent="1">
+        <mxGeometry x="700" y="370" width="120" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Flow name="Interest" Note="" FlowRate="[Savings Account]*[Interest Rate]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="58">
+      <mxCell style="flow" edge="1" parent="1" target="57">
+        <mxGeometry x="220" y="50" width="100" height="100" as="geometry">
+          <mxPoint x="480" y="389.99983771709725" as="sourcePoint"/>
+          <mxPoint x="220" y="150" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Variable name="Interest Rate" Note="" Equation=".03" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="59">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="470" y="195" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="60">
+      <mxCell style="link" edge="1" parent="1" source="59" target="58">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="61">
+      <mxCell style="link" edge="1" parent="1" source="57" target="58">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="730" y="300"/>
+            <mxPoint x="630" y="290"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Display name="Savings Account" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="" yAxis2="" showMarkers="false" showLines="true" showArea="false" ThreeDimensional="false" Primitives="57,58" Primitives2="" AutoAddPrimitives="false" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" FlipHorizontal="false" FlipVertical="false" LabelPosition="Bottom" legendPosition="Automatic" id="63">
+      <mxCell style="display" vertex="1" parent="1" visible="0">
+        <mxGeometry x="10" y="10" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Stock name="Bathtub2" Note="" InitialValue="0" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" oldId="64" id="64">
+      <mxCell style="stock" vertex="1" parent="1">
+        <mxGeometry x="1145" y="450" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Flow name="Flow2" Note="" FlowRate="IfThenElse([Gap]&gt;[Max Rate], [Max Rate], [Gap])" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" oldId="65" id="65">
+      <mxCell style="flow" edge="1" target="64" parent="1">
+        <mxGeometry x="905" y="370" width="100" height="100" as="geometry">
+          <mxPoint x="935" y="470" as="sourcePoint"/>
+          <mxPoint x="905" y="470" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Variable name="Full" Note="" Equation="50" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="66">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="940" y="270" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Gap" Note="" Equation="[Full]-[Bathtub2]" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="67">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="1080" y="345" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="68">
+      <mxCell style="link" edge="1" parent="1" source="66" target="67">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="70">
+      <mxCell style="link" edge="1" parent="1" source="64" target="67">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="71">
+      <mxCell style="link" edge="1" parent="1" source="67" target="65">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Display name="Bathtub" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="" yAxis2="" showMarkers="false" showLines="true" showArea="false" ThreeDimensional="false" Primitives="55,56" Primitives2="" AutoAddPrimitives="false" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" FlipHorizontal="false" FlipVertical="false" LabelPosition="Bottom" legendPosition="Automatic" id="72">
+      <mxCell style="display" vertex="1" parent="1" visible="0">
+        <mxGeometry x="10" y="10" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Variable name="Max Rate" Note="" Equation="5" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="73">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="980" y="560" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="74">
+      <mxCell style="link" edge="1" parent="1" source="73" target="65">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+  </root>
+</InsightMakerModel>
