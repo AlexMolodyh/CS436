@@ -1,0 +1,240 @@
+<InsightMakerModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Setting Note="" Version="36" TimeLength="20" TimeStart="0" TimeStep="1" TimeUnits="Hours" StrictUnits="true" StrictLinks="true" StrictAgentResolution="true" Units="" HiddenUIGroups="Validation,User Interface" SolutionAlgorithm="RK1" BackgroundColor="white" Throttle="0.2" Macros="" SensitivityPrimitives="" SensitivityRuns="50" SensitivityBounds="50, 80, 95, 100" SensitivityShowRuns="false" article="{&quot;comments&quot;:true, &quot;facebookUID&quot;: &quot;&quot;}" StyleSheet="{}" id="2">
+      <mxCell parent="1" vertex="1" visible="0">
+        <mxGeometry x="20" y="20" width="80" height="40" as="geometry"/>
+      </mxCell>
+    </Setting>
+    <Display name="Default Display" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="%o" ThreeDimensional="false" Primitives="55,87,91,95,93,86,60" AutoAddPrimitives="true" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" yAxis2="" Primitives2="" showMarkers="false" showLines="true" showArea="false" legendPosition="None" id="3">
+      <mxCell style="roundImage;image=/builder/images/DisplayFull.png;" parent="1" vertex="1" visible="0">
+        <mxGeometry x="50" y="20" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Variable name="Speed Goal" Note="" Equation="24" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="true" SliderMax="60" SliderMin="0" SliderStep="1" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="55">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="790" y="770" width="140" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Rolling Distance" Note="" Equation="20" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="58">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="670" y="80" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Vehicle Max Speed" Note="" Equation="80" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="59">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="930" y="80" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Stock name="Speed" Note="" InitialValue="0" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="60">
+      <mxCell style="stock" vertex="1" parent="1">
+        <mxGeometry x="810" y="320" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Link name="Link" Note="" BiDirectional="false" id="66">
+      <mxCell style="link" edge="1" parent="1" source="58" target="92">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="820" y="130"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="67">
+      <mxCell style="link" edge="1" parent="1" source="59" target="92">
+        <mxGeometry x="10" width="100" height="100" as="geometry">
+          <mxPoint x="10" y="100" as="sourcePoint"/>
+          <mxPoint x="110" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="890" y="130"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="68">
+      <mxCell style="link" edge="1" parent="1" source="55" target="91">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="953" y="670" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="890" y="700"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="69">
+      <mxCell style="link" edge="1" parent="1" source="55" target="87">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="771" y="670" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="840" y="710"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="71">
+      <mxCell style="link" edge="1" parent="1" source="87" target="86">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint x="710" y="630" as="sourcePoint"/>
+          <mxPoint x="600" y="540" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="640" y="610"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="72">
+      <mxCell style="link" edge="1" parent="1" source="91" target="90">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint x="1020" y="630" as="sourcePoint"/>
+          <mxPoint x="1125.3513327013998" y="540.2587399996871" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1070" y="600"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="73">
+      <mxCell style="link" edge="1" parent="1" source="90" target="95">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint x="1128.652627224534" y="500.1950225676823" as="sourcePoint"/>
+          <mxPoint x="1198" y="280" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1210" y="400"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="74">
+      <mxCell style="link" edge="1" parent="1" source="60" target="87">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="760" y="630" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="850" y="460"/>
+            <mxPoint x="820" y="550"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="75">
+      <mxCell style="link" edge="1" parent="1" source="60" target="91">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="960" y="630" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="870" y="480"/>
+            <mxPoint x="910" y="560"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Gas Pedal" Note="" Equation="4.3" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="true" SliderMax="5" SliderMin="0" SliderStep="0.1" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="81">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="390" y="625" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="82">
+      <mxCell style="link" edge="1" parent="1" source="81" target="86">
+        <mxGeometry x="7" width="100" height="100" as="geometry">
+          <mxPoint x="7" y="100" as="sourcePoint"/>
+          <mxPoint x="107" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="530" y="600"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Brake Pedal" Note="" Equation="5" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="true" SliderMax="5" SliderMin="0" SliderStep="0.1" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="83">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="1200" y="630" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="84">
+      <mxCell style="link" edge="1" parent="1" source="83" target="90">
+        <mxGeometry y="13" width="100" height="100" as="geometry">
+          <mxPoint y="113" as="sourcePoint"/>
+          <mxPoint x="1153.3470681657789" y="539.7700726194431" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1190" y="600"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Gas Input" Note="" Equation="[Gas Pedal]*[Low Gap]" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="86">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="520" y="500" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Low Gap" Note="" Equation="IfThenElse(([Speed Goal]&gt;[Speed]), 1, 0)" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="87">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="680" y="620" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="88">
+      <mxCell style="link" edge="1" parent="1" source="86" target="93">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="530" y="390"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Brake Input" Note="" Equation="[High Gap]*[Brake Pedal]" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="90">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="1080" y="500" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="High Gap" Note="" Equation="IfThenElse([Speed]&gt;[Speed Goal], 1, 0)" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="91">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="910" y="625" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Flow name="Flow" Note="" FlowRate="([Engine Rotation] - [Wheel Friction])" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="92">
+      <mxCell style="flow" edge="1" parent="1" target="60">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint x="860" y="50" as="sourcePoint"/>
+          <mxPoint y="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Variable name="Engine Rotation" Note="" Equation="[Gas Input]" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="93">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="530" y="260" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="94">
+      <mxCell style="link" edge="1" parent="1" source="93" target="92">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="730" y="180"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Wheel Friction" Note="" Equation="[Brake Input]*1.5" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="95">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="1100" y="260" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="96">
+      <mxCell style="link" edge="1" parent="1" source="95" target="92">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1020" y="200"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+  </root>
+</InsightMakerModel>
