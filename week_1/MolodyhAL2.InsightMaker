@@ -2,17 +2,17 @@
   <root>
     <mxCell id="0"/>
     <mxCell id="1" parent="0"/>
-    <Setting Note="" Version="36" TimeLength="20" TimeStart="0" TimeStep="1" TimeUnits="Hours" StrictUnits="true" StrictLinks="true" StrictAgentResolution="true" Units="" HiddenUIGroups="Validation,User Interface" SolutionAlgorithm="RK1" BackgroundColor="white" Throttle="0.2" Macros="" SensitivityPrimitives="" SensitivityRuns="50" SensitivityBounds="50, 80, 95, 100" SensitivityShowRuns="false" article="{&quot;comments&quot;:true, &quot;facebookUID&quot;: &quot;&quot;}" StyleSheet="{}" id="2">
+    <Setting Note="" Version="36" TimeLength="20" TimeStart="0" TimeStep="1" TimeUnits="Hours" StrictUnits="true" StrictLinks="true" StrictAgentResolution="true" Units="" HiddenUIGroups="Validation,User Interface" SolutionAlgorithm="RK1" BackgroundColor="white" Throttle="1" Macros="" SensitivityPrimitives="" SensitivityRuns="50" SensitivityBounds="50, 80, 95, 100" SensitivityShowRuns="false" article="{&quot;comments&quot;:true, &quot;facebookUID&quot;: &quot;&quot;}" StyleSheet="{}" id="2">
       <mxCell parent="1" vertex="1" visible="0">
         <mxGeometry x="20" y="20" width="80" height="40" as="geometry"/>
       </mxCell>
     </Setting>
-    <Display name="Default Display" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="%o" ThreeDimensional="false" Primitives="55,87,91,95,93,86,60" AutoAddPrimitives="true" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" yAxis2="" Primitives2="" showMarkers="false" showLines="true" showArea="false" legendPosition="None" id="3">
+    <Display name="Car Motion Causal Loop Diagram" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="%o" ThreeDimensional="false" Primitives="55,95,93,86,60" AutoAddPrimitives="true" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" yAxis2="" Primitives2="" showMarkers="false" showLines="true" showArea="false" legendPosition="None" id="3">
       <mxCell style="roundImage;image=/builder/images/DisplayFull.png;" parent="1" vertex="1" visible="0">
         <mxGeometry x="50" y="20" width="64" height="64" as="geometry"/>
       </mxCell>
     </Display>
-    <Variable name="Speed Goal" Note="" Equation="24" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="true" SliderMax="60" SliderMin="0" SliderStep="1" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="55">
+    <Variable name="Speed Goal" Note="" Equation="43" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="true" SliderMax="60" SliderMin="0" SliderStep="1" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="55">
       <mxCell style="variable" vertex="1" parent="1">
         <mxGeometry x="790" y="770" width="140" height="50" as="geometry"/>
       </mxCell>
@@ -133,7 +133,7 @@
         </mxGeometry>
       </mxCell>
     </Link>
-    <Variable name="Gas Pedal" Note="" Equation="4.3" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="true" SliderMax="5" SliderMin="0" SliderStep="0.1" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="81">
+    <Variable name="Gas Pedal" Note="" Equation="1.8" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="true" SliderMax="5" SliderMin="0" SliderStep="0.1" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="81">
       <mxCell style="variable" vertex="1" parent="1">
         <mxGeometry x="390" y="625" width="120" height="50" as="geometry"/>
       </mxCell>
@@ -204,7 +204,7 @@
         </mxGeometry>
       </mxCell>
     </Flow>
-    <Variable name="Engine Rotation" Note="" Equation="[Gas Input]" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="93">
+    <Variable name="Engine Rotation" Note="" Equation="[Gas Input]*1.5" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="93">
       <mxCell style="variable" vertex="1" parent="1">
         <mxGeometry x="530" y="260" width="120" height="50" as="geometry"/>
       </mxCell>
