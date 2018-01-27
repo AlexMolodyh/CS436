@@ -1,0 +1,152 @@
+<InsightMakerModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Folder name="Person" Note="" Type="Agent" Solver="{&quot;enabled&quot;: false, &quot;algorithm&quot;: &quot;RK1&quot;, &quot;timeStep&quot;: 1}" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" AgentBase="" id="73">
+      <mxCell style="folder" vertex="1" parent="1">
+        <mxGeometry x="1080" y="60" width="140" height="410" as="geometry"/>
+      </mxCell>
+    </Folder>
+    <State name="ABM Healthy" Note="" Active="Index(Self) &lt;&gt; 1" Residency="0" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="65">
+      <mxCell style="state" vertex="1" parent="73">
+        <mxGeometry x="20" y="20" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </State>
+    <State name="ABM Infected" Note="" Active="Index(Self) == 1" Residency="0" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="66">
+      <mxCell style="state" vertex="1" parent="73">
+        <mxGeometry x="20" y="180" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </State>
+    <State name="ABM Recovered" Note="" Active="false" Residency="0" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="67">
+      <mxCell style="state" vertex="1" parent="73">
+        <mxGeometry x="20" y="350" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </State>
+    <Transition name="ABM Infection" Note="" Trigger="Probability" Value="[Percent Infected]" Repeat="false" Recalculate="true" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="68">
+      <mxCell style="transition" edge="1" parent="73" source="65" target="66">
+        <mxGeometry x="-1080" y="-60" width="100" height="100" as="geometry">
+          <mxPoint x="-1080" y="40" as="sourcePoint"/>
+          <mxPoint x="-980" y="-60" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Transition>
+    <Transition name="ABM Recovery" Note="" Trigger="Probability" Value="0.2" Repeat="false" Recalculate="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="69">
+      <mxCell style="transition" edge="1" parent="73" source="66" target="67">
+        <mxGeometry x="-1080" y="-60" width="100" height="100" as="geometry">
+          <mxPoint x="-1080" y="40" as="sourcePoint"/>
+          <mxPoint x="-980" y="-60" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Transition>
+    <Setting Note="" Version="36" TimeLength="20" TimeStart="0" TimeStep="1" TimeUnits="Years" StrictUnits="true" StrictLinks="true" StrictAgentResolution="true" Units="" HiddenUIGroups="Validation,User Interface" SolutionAlgorithm="RK1" BackgroundColor="white" Throttle="1" Macros="" SensitivityPrimitives="" SensitivityRuns="50" SensitivityBounds="50, 80, 95, 100" SensitivityShowRuns="false" article="{&quot;comments&quot;:true, &quot;facebookUID&quot;: &quot;&quot;}" StyleSheet="{}" id="2">
+      <mxCell parent="1" vertex="1" visible="0">
+        <mxGeometry x="20" y="20" width="80" height="40" as="geometry"/>
+      </mxCell>
+    </Setting>
+    <Display name="Infection Rate" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="%o" ThreeDimensional="false" Primitives="55,56,60,63,65,66,67,74,75" AutoAddPrimitives="true" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" yAxis2="" Primitives2="" showMarkers="false" showLines="true" showArea="false" legendPosition="None" id="3">
+      <mxCell style="roundImage;image=/builder/images/DisplayFull.png;" parent="1" vertex="1" visible="0">
+        <mxGeometry x="50" y="20" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Stock name="Healthy" Note="" InitialValue="100" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="55">
+      <mxCell style="stock" vertex="1" parent="1">
+        <mxGeometry x="390" y="80" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Stock name="Infected" Note="" InitialValue="1" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="56">
+      <mxCell style="stock" vertex="1" parent="1">
+        <mxGeometry x="390" y="240" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Flow name="Infection" Note="" FlowRate="[Infection Rate]*[Healthy]*[Infected]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="57">
+      <mxCell edge="1" parent="1" source="55" target="56">
+        <mxGeometry x="150" width="100" height="100" as="geometry">
+          <mxPoint x="150" y="100" as="sourcePoint"/>
+          <mxPoint x="250" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Variable name="Infection Rate" Note="" Equation="0.008" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="58">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="140" y="80" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="59">
+      <mxCell style="link" edge="1" parent="1" source="58" target="57">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="360" y="130"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Stock name="Immune" Note="" InitialValue="0" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="60">
+      <mxCell style="stock" vertex="1" parent="1">
+        <mxGeometry x="390" y="410" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Flow name="Recovery" Note="" FlowRate="[Recovery Rate]*[Infected]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="62">
+      <mxCell style="flow" edge="1" parent="1" source="56" target="60">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Variable name="Recovery Rate" Note="" Equation="0.1" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="63">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="620" y="270" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="64">
+      <mxCell style="link" edge="1" parent="1" source="63" target="62">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="530" y="290"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Display name="ABM Infection Rate" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="" yAxis2="" showMarkers="false" showLines="true" showArea="false" ThreeDimensional="false" Primitives="74" Primitives2="" AutoAddPrimitives="true" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" FlipHorizontal="false" FlipVertical="false" LabelPosition="Bottom" legendPosition="Automatic" id="72">
+      <mxCell style="display" vertex="1" parent="1" visible="0">
+        <mxGeometry x="10" y="10" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Agents name="Population" Note="" Size="100" GeoWrap="false" GeoDimUnits="Unitless" GeoWidth="200" GeoHeight="100" Placement="Random" PlacementFunction="{Rand()*Width(Self), Rand()*Height(Self)}" Network="None" NetworkFunction="RandBoolean(0.02)" Agent="73" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="1" id="74">
+      <mxCell style="agents" vertex="1" parent="1">
+        <mxGeometry x="780" y="40" width="170" height="80" as="geometry"/>
+      </mxCell>
+    </Agents>
+    <Variable name="Percent Infected" Note="" Equation="count(FindState([Population], [ABM Infected]))/PopulationSize([Population])" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="75">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="880" y="230" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="76">
+      <mxCell style="link" edge="1" parent="1" source="74" target="75">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="880" y="190"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="77">
+      <mxCell style="link" edge="1" parent="1" source="75" target="68">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1040" y="180"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+  </root>
+</InsightMakerModel>
