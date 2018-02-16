@@ -1,0 +1,315 @@
+<InsightMakerModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Setting Note="" Version="36" TimeLength="75" TimeStart="0" TimeStep="0.5" TimeUnits="Years" StrictUnits="true" StrictLinks="true" StrictAgentResolution="true" Units="" HiddenUIGroups="Validation,User Interface" SolutionAlgorithm="RK4" BackgroundColor="white" Throttle="1" Macros="" SensitivityPrimitives="" SensitivityRuns="50" SensitivityBounds="50, 80, 95, 100" SensitivityShowRuns="false" article="{&quot;comments&quot;:true, &quot;facebookUID&quot;: &quot;&quot;}" StyleSheet="{}" id="2">
+      <mxCell parent="1" vertex="1" visible="0">
+        <mxGeometry x="20" y="20" width="80" height="40" as="geometry"/>
+      </mxCell>
+    </Setting>
+    <Display name="Drought!" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="%o" ThreeDimensional="false" Primitives="78,81,82,90" AutoAddPrimitives="true" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" yAxis2="" Primitives2="" showMarkers="false" showLines="true" showArea="false" legendPosition="Automatic" id="3">
+      <mxCell style="roundImage;image=/builder/images/DisplayFull.png;" parent="1" vertex="1" visible="0">
+        <mxGeometry x="50" y="20" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Variable name="Current State" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" oldId="55" id="55">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="270" y="275" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Gap" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" oldId="56" id="56">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="150" y="150" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Action" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" oldId="57" id="57">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="310" y="15" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Desired State" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" oldId="59" id="59">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="50" y="275" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Unintended Consequences" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" oldId="60" id="60">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="480" y="160" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="delay" Note="" BiDirectional="false" oldId="61" id="61">
+      <mxCell style="link" edge="1" parent="1" source="57" target="60">
+        <mxGeometry x="10" y="-155" width="100" height="100" as="geometry">
+          <mxPoint x="10" y="-55" as="sourcePoint"/>
+          <mxPoint x="110" y="-155" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="510" y="45"/>
+          </Array>
+          <mxPoint x="-2" y="-56" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="s" Note="" BiDirectional="false" oldId="62" id="62">
+      <mxCell style="link" edge="1" parent="1" source="57" target="55">
+        <mxGeometry x="10" y="-155" width="100" height="100" as="geometry">
+          <mxPoint x="10" y="-55" as="sourcePoint"/>
+          <mxPoint x="110" y="-155" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="490" y="195"/>
+          </Array>
+          <mxPoint x="15" y="74" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="o" Note="" BiDirectional="false" oldId="63" id="63">
+      <mxCell style="link" edge="1" parent="1" source="60" target="55">
+        <mxGeometry x="10" y="-155" width="100" height="100" as="geometry">
+          <mxPoint x="10" y="-55" as="sourcePoint"/>
+          <mxPoint x="110" y="-155" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="530" y="315"/>
+          </Array>
+          <mxPoint x="-23" y="58" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="o" Note="" BiDirectional="false" oldId="64" id="64">
+      <mxCell style="link" edge="1" parent="1" source="55" target="56">
+        <mxGeometry x="10" y="-155" width="100" height="100" as="geometry">
+          <mxPoint x="10" y="-55" as="sourcePoint"/>
+          <mxPoint x="110" y="-155" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="220" y="275"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="s" Note="" BiDirectional="false" oldId="65" id="65">
+      <mxCell style="link" edge="1" parent="1" source="59" target="56">
+        <mxGeometry x="10" y="-155" width="100" height="100" as="geometry">
+          <mxPoint x="10" y="-55" as="sourcePoint"/>
+          <mxPoint x="110" y="-155" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="200" y="255"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="s" Note="" BiDirectional="false" oldId="66" id="66">
+      <mxCell style="link" edge="1" parent="1" source="56" target="57">
+        <mxGeometry x="10" y="-155" width="100" height="100" as="geometry">
+          <mxPoint x="9" y="-59" as="sourcePoint"/>
+          <mxPoint x="109" y="-159" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="169" y="51"/>
+          </Array>
+          <mxPoint x="4" y="-61" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Drought" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" oldId="67" id="67">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="970" y="315" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Needed Water" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" oldId="68" id="68">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="850" y="190" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Dig Deeper Wells" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" oldId="69" id="69">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="1010" y="55" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Adequate Water" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" oldId="70" id="70">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="750" y="315" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Water Table Lowers" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" oldId="71" id="71">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="1180" y="200" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="delay" Note="" BiDirectional="false" oldId="72" id="72">
+      <mxCell style="link" edge="1" source="69" target="71" parent="1">
+        <mxGeometry x="710" y="-115" width="100" height="100" as="geometry">
+          <mxPoint x="710" y="-15" as="sourcePoint"/>
+          <mxPoint x="810" y="-115" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1210" y="85"/>
+          </Array>
+          <mxPoint x="-2" y="-56" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="s" Note="" BiDirectional="false" oldId="73" id="73">
+      <mxCell style="link" edge="1" source="69" target="67" parent="1">
+        <mxGeometry x="710" y="-115" width="100" height="100" as="geometry">
+          <mxPoint x="710" y="-15" as="sourcePoint"/>
+          <mxPoint x="810" y="-115" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1190" y="235"/>
+          </Array>
+          <mxPoint x="15" y="74" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="o" Note="" BiDirectional="false" oldId="74" id="74">
+      <mxCell style="link" edge="1" source="71" target="67" parent="1">
+        <mxGeometry x="710" y="-115" width="100" height="100" as="geometry">
+          <mxPoint x="710" y="-15" as="sourcePoint"/>
+          <mxPoint x="810" y="-115" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1230" y="355"/>
+          </Array>
+          <mxPoint x="-23" y="58" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="o" Note="" BiDirectional="false" oldId="75" id="75">
+      <mxCell style="link" edge="1" source="67" target="68" parent="1">
+        <mxGeometry x="710" y="-115" width="100" height="100" as="geometry">
+          <mxPoint x="710" y="-15" as="sourcePoint"/>
+          <mxPoint x="810" y="-115" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="920" y="315"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="s" Note="" BiDirectional="false" oldId="76" id="76">
+      <mxCell style="link" edge="1" source="70" target="68" parent="1">
+        <mxGeometry x="710" y="-115" width="100" height="100" as="geometry">
+          <mxPoint x="710" y="-15" as="sourcePoint"/>
+          <mxPoint x="810" y="-115" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="900" y="295"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="s" Note="" BiDirectional="false" oldId="77" id="77">
+      <mxCell style="link" edge="1" source="68" target="69" parent="1">
+        <mxGeometry x="710" y="-115" width="100" height="100" as="geometry">
+          <mxPoint x="709" y="-19" as="sourcePoint"/>
+          <mxPoint x="809" y="-119" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="900" y="90"/>
+          </Array>
+          <mxPoint x="4" y="-61" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Stock name="Drought" Note="" InitialValue=".1" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="78">
+      <mxCell style="stock" vertex="1" parent="1">
+        <mxGeometry x="600" y="605" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Flow name="Obtaining More Water" Note="" FlowRate=".2" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="79">
+      <mxCell style="flow" edge="1" parent="1" source="78">
+        <mxGeometry x="-220" y="25" width="100" height="100" as="geometry">
+          <mxPoint x="-105" y="175" as="sourcePoint"/>
+          <mxPoint x="875" y="625" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="710" y="765"/>
+          </Array>
+          <mxPoint x="33" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Flow name="Obtaining Less Water" Note="" FlowRate="IfThenElse(Years() % 5 == 0, IfThenElse([Water Table Dropping]&lt;=[Total Water], [Water Table Dropping], [Total Water]), [Gap])" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="80">
+      <mxCell style="flow" edge="1" parent="1" target="78">
+        <mxGeometry x="-110" y="75" width="100" height="100" as="geometry">
+          <mxPoint x="380" y="625.000000000066" as="sourcePoint"/>
+          <mxPoint x="-110" y="175" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Variable name="Not Drought" Note="" Equation="1" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="81">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="390" y="425" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Gap" Note="" Equation="[Not Drought]-[Drought]" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="82">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="530" y="495" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="84">
+      <mxCell style="link" edge="1" parent="1" source="78" target="82">
+        <mxGeometry x="-220" y="25" width="100" height="100" as="geometry">
+          <mxPoint x="-220" y="125" as="sourcePoint"/>
+          <mxPoint x="-120" y="25" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="85">
+      <mxCell style="link" edge="1" parent="1" source="81" target="82">
+        <mxGeometry x="-220" y="25" width="100" height="100" as="geometry">
+          <mxPoint x="-120" y="25" as="sourcePoint"/>
+          <mxPoint x="-220" y="125" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="87">
+      <mxCell style="link" edge="1" parent="1" source="82" target="80">
+        <mxGeometry x="-220" y="25" width="100" height="100" as="geometry">
+          <mxPoint x="-220" y="125" as="sourcePoint"/>
+          <mxPoint x="-120" y="25" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Stock name="Water Table Dropping" Note="" InitialValue="0" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="90">
+      <mxCell style="stock" vertex="1" parent="1">
+        <mxGeometry x="620" y="715" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Flow name="Water Table Lower" Note="" FlowRate="IfThenElse([Water Table Dropping] &gt; [Total Water], 0, [Obtaining More Water]-0.1)" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="93">
+      <mxCell style="flow" edge="1" parent="1" target="90">
+        <mxGeometry x="-220" y="25" width="100" height="100" as="geometry">
+          <mxPoint x="900" y="734.8972630886825" as="sourcePoint"/>
+          <mxPoint x="-220" y="125" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Link name="Link" Note="" BiDirectional="false" id="94">
+      <mxCell style="link" edge="1" parent="1" source="79" target="93">
+        <mxGeometry x="-220" y="25" width="100" height="100" as="geometry">
+          <mxPoint x="-220" y="125" as="sourcePoint"/>
+          <mxPoint x="-120" y="25" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="97">
+      <mxCell style="link" edge="1" parent="1" source="90" target="80">
+        <mxGeometry x="-220" y="25" width="100" height="100" as="geometry">
+          <mxPoint x="-220" y="125" as="sourcePoint"/>
+          <mxPoint x="-120" y="25" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Total Water" Note="" Equation="5" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="98">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="500" y="795" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="107">
+      <mxCell style="link" edge="1" parent="1" source="98" target="80">
+        <mxGeometry x="-220" y="25" width="100" height="100" as="geometry">
+          <mxPoint x="-220" y="125" as="sourcePoint"/>
+          <mxPoint x="-120" y="25" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="108">
+      <mxCell style="link" edge="1" parent="1" source="98" target="93">
+        <mxGeometry x="-220" y="25" width="100" height="100" as="geometry">
+          <mxPoint x="-220" y="125" as="sourcePoint"/>
+          <mxPoint x="-120" y="25" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+  </root>
+</InsightMakerModel>

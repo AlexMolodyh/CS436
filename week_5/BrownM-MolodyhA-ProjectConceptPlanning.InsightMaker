@@ -1,0 +1,926 @@
+<InsightMakerModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Setting Note="" Version="36" TimeLength="20" TimeStart="0" TimeStep="1" TimeUnits="Years" StrictUnits="true" StrictLinks="true" StrictAgentResolution="true" Units="" HiddenUIGroups="Validation,User Interface" SolutionAlgorithm="RK1" BackgroundColor="white" Throttle="1" Macros="" SensitivityPrimitives="" SensitivityRuns="50" SensitivityBounds="50, 80, 95, 100" SensitivityShowRuns="false" article="{&quot;comments&quot;:true, &quot;facebookUID&quot;: &quot;&quot;}" StyleSheet="{}" id="2">
+      <mxCell parent="1" vertex="1" visible="0">
+        <mxGeometry x="20" y="20" width="80" height="40" as="geometry"/>
+      </mxCell>
+    </Setting>
+    <Display name="Default Display" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="%o" ThreeDimensional="false" Primitives="55,56,57,60,62,64,67,69,71,74,76,78,82,83,91,93,96,144,150,154,156,160,162,164,166,168,170" AutoAddPrimitives="true" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" yAxis2="" Primitives2="" showMarkers="false" showLines="true" showArea="false" legendPosition="None" id="3">
+      <mxCell style="roundImage;image=/builder/images/DisplayFull.png;" parent="1" vertex="1" visible="0">
+        <mxGeometry x="50" y="20" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Variable name="Travel Time" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="55">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="1020" y="430" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Atractiveness of PV" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="56">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="1250" y="1280" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Attractiveness of DV" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="57">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="1820" y="1385" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="O" Note="" BiDirectional="false" id="58">
+      <mxCell style="link;fontSize=24;fontColor=#FF0000;strokeColor=#FF0000;strokeWidth=3;30=30;" parent="1" source="55" target="56" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="435" y="710" as="sourcePoint"/>
+          <mxPoint x="535" y="610" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="900" y="580"/>
+            <mxPoint x="840" y="990"/>
+            <mxPoint x="1010" y="1300"/>
+          </Array>
+          <mxPoint x="-10" y="402" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="59">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="55" target="57" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="1275" y="680" as="sourcePoint"/>
+          <mxPoint x="1375" y="580" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="800" y="540"/>
+            <mxPoint x="730" y="1020"/>
+            <mxPoint x="1140" y="1520"/>
+          </Array>
+          <mxPoint x="343" y="486" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Attractiveness of PT" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="60">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="1005" y="690" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="O" Note="" BiDirectional="false" id="61">
+      <mxCell style="link;fontSize=24;strokeColor=#FF0000;fontColor=#FF0000;strokeWidth=3;30=30;" parent="1" source="55" target="60" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="435" y="710" as="sourcePoint"/>
+          <mxPoint x="535" y="610" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1030" y="560"/>
+          </Array>
+          <mxPoint x="-13" y="55" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="PT Fare" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="62">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="900" y="990" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="O" Note="" BiDirectional="false" id="63">
+      <mxCell style="link;fontSize=24;fontColor=#FF0000;strokeColor=#FF0000;strokeWidth=3;30=30;" parent="1" source="62" target="60" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="445" y="1228" as="sourcePoint"/>
+          <mxPoint x="545" y="1128" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="940" y="820"/>
+          </Array>
+          <mxPoint x="12" y="-94" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Public Transit" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="64">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="1415" y="700" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="S" Note="" BiDirectional="false" id="65">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="60" target="64" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="735" y="1110" as="sourcePoint"/>
+          <mxPoint x="835" y="1010" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1270" y="650"/>
+          </Array>
+          <mxPoint x="84" y="-21" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="66">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="62" target="56" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="427" y="1025" as="sourcePoint"/>
+          <mxPoint x="527" y="925" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1050" y="1250"/>
+          </Array>
+          <mxPoint x="7" y="73" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Convinience" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="67">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="1870" y="1605" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="S" Note="" BiDirectional="false" id="68">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="67" target="57" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="2185" y="427" as="sourcePoint"/>
+          <mxPoint x="2285" y="327" as="targetPoint"/>
+          <Array as="points"/>
+          <mxPoint x="-5" y="-40" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Traffic Congestion" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="69">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="1720" y="490" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="S" Note="" BiDirectional="false" id="70">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="69" target="55" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="1805" y="1080" as="sourcePoint"/>
+          <mxPoint x="1905" y="980" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1380" y="580"/>
+          </Array>
+          <mxPoint x="-224" y="-5" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Time of Day" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="71">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="1370" y="370" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="S" Note="" BiDirectional="false" id="72">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="71" target="69" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="1275" y="680" as="sourcePoint"/>
+          <mxPoint x="1375" y="580" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1620" y="420"/>
+          </Array>
+          <mxPoint x="85" y="19" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="73">
+      <mxCell style="link;fontSize=24;strokeColor=#0000FF;fontColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="71" target="55" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="435" y="710" as="sourcePoint"/>
+          <mxPoint x="535" y="610" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1260" y="380"/>
+          </Array>
+          <mxPoint x="-57" y="-4" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Accidents" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="74">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="1675" y="1050" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="S" Note="" BiDirectional="false" id="75">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="74" target="69" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="1985" y="573" as="sourcePoint"/>
+          <mxPoint x="2085" y="473" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1600" y="720"/>
+          </Array>
+          <mxPoint x="-22" y="-195" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Human Error" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="76">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="2410" y="1365" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="S" Note="" BiDirectional="false" id="77">
+      <mxCell style="link;fontSize=24;strokeColor=#0000FF;strokeWidth=3;30=30;fontColor=#0000FF;" parent="1" source="76" target="74" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="2081" y="1108" as="sourcePoint"/>
+          <mxPoint x="2181" y="1008" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="2410" y="1170"/>
+            <mxPoint x="2220" y="1050"/>
+            <mxPoint x="2000" y="1020"/>
+          </Array>
+          <mxPoint x="-176" y="-175" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Driver-less Vehicles" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="78">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="2010" y="1205" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="S" Note="" BiDirectional="false" id="79">
+      <mxCell style="link;fontSize=24;strokeColor=#0000FF;strokeWidth=3;30=30;fontColor=#0000FF;" parent="1" source="57" target="78" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="2185" y="427" as="sourcePoint"/>
+          <mxPoint x="2285" y="327" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="2050" y="1345"/>
+          </Array>
+          <mxPoint x="55" y="-14" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="O" Note="" BiDirectional="false" id="80">
+      <mxCell style="link;fontSize=24;strokeColor=#FF0000;fontColor=#FF0000;strokeWidth=3;30=30;" parent="1" source="78" target="76" edge="1">
+        <mxGeometry x="80" y="505" width="100" height="100" as="geometry">
+          <mxPoint x="1522" y="229" as="sourcePoint"/>
+          <mxPoint x="1622" y="129" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="2310" y="1235"/>
+          </Array>
+          <mxPoint x="102" y="16" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="81">
+      <mxCell style="link;fontSize=24;strokeColor=#0000FF;strokeWidth=3;30=30;fontColor=#0000FF;" parent="1" source="76" target="57" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="1505" y="230" as="sourcePoint"/>
+          <mxPoint x="1605" y="130" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="2200" y="1500"/>
+          </Array>
+          <mxPoint x="-159" y="34" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Frustration" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="82">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="2510" y="980" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Road Construction" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="83">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="2290" y="750" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="S" Note="" BiDirectional="false" id="84">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="74" target="83" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="2096" y="780" as="sourcePoint"/>
+          <mxPoint x="2196" y="680" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="2050" y="760"/>
+          </Array>
+          <mxPoint x="146" y="-132" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="85">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="69" target="83" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="2035" y="315" as="sourcePoint"/>
+          <mxPoint x="2135" y="215" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="2120" y="530"/>
+          </Array>
+          <mxPoint x="206" y="76" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="86">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="76" target="83" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="2325" y="220" as="sourcePoint"/>
+          <mxPoint x="2425" y="120" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="2520" y="1040"/>
+          </Array>
+          <mxPoint x="-35" y="-233" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="87">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="83" target="69" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="2031" y="313" as="sourcePoint"/>
+          <mxPoint x="2131" y="213" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1970" y="690"/>
+          </Array>
+          <mxPoint x="-201" y="-70" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="88">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="82" target="76" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="2325" y="535" as="sourcePoint"/>
+          <mxPoint x="2425" y="435" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="2610" y="1190"/>
+          </Array>
+          <mxPoint x="-11" y="112" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="89">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeWidth=3;30=30;strokeColor=#0000FF;" parent="1" source="83" target="82" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="2325" y="220" as="sourcePoint"/>
+          <mxPoint x="2425" y="120" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="2530" y="830"/>
+          </Array>
+          <mxPoint x="69" y="35" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Text name="New Text" LabelPosition="Middle" id="90">
+      <mxCell style="text" parent="1" vertex="1">
+        <mxGeometry x="1860" y="2160" width="200" height="50" as="geometry"/>
+      </mxCell>
+    </Text>
+    <Variable name="Desired Travel Time" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="91">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="1030" y="1040" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="O" Note="" BiDirectional="false" id="92">
+      <mxCell style="link;fontSize=24;fontColor=#FF0000;strokeColor=#FF0000;strokeWidth=3;30=30;" parent="1" source="74" target="56" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="995" y="665" as="sourcePoint"/>
+          <mxPoint x="1095" y="565" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1590" y="1300"/>
+          </Array>
+          <mxPoint x="-105" y="99" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Available Lanes" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="93">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="2080" y="490" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="O" Note="" BiDirectional="false" id="94">
+      <mxCell style="link;fontSize=24;fontColor=#FF0000;strokeColor=#FF0000;strokeWidth=3;30=30;" parent="1" source="93" target="69" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="1755" y="-15" as="sourcePoint"/>
+          <mxPoint x="1855" y="-115" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1950" y="430"/>
+          </Array>
+          <mxPoint x="-49" y="-36" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="95">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="83" target="93" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="1755" y="-15" as="sourcePoint"/>
+          <mxPoint x="1855" y="-115" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="2290" y="590"/>
+          </Array>
+          <mxPoint x="-40" y="-82" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Personal Vehicle" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="96">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="1295" y="1030" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="S" Note="" BiDirectional="false" id="97">
+      <mxCell style="link;fontSize=24;strokeColor=#0000FF;fontColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="56" target="96" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="155" y="698" as="sourcePoint"/>
+          <mxPoint x="255" y="598" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1300" y="1150"/>
+          </Array>
+          <mxPoint x="-14" y="-69" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="98">
+      <mxCell style="link;fontSize=24;strokeColor=#0000FF;strokeWidth=3;30=30;fontColor=#0000FF;" parent="1" source="91" target="56" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="-275" y="710" as="sourcePoint"/>
+          <mxPoint x="-175" y="610" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1140" y="1220"/>
+          </Array>
+          <mxPoint x="20" y="61" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="O" Note="" BiDirectional="false" oldId="99" id="99">
+      <mxCell style="link;fontSize=24;strokeColor=#FF0000;strokeWidth=3;30=30;fontColor=#FF0000;" parent="1" source="91" target="60" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="-570" y="823" as="sourcePoint"/>
+          <mxPoint x="-470" y="723" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1030" y="900"/>
+          </Array>
+          <mxPoint x="-20" y="-90" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="O" Note="" BiDirectional="false" id="100">
+      <mxCell style="link;fontSize=24;strokeColor=#FF0000;fontColor=#FF0000;fillColor=none;labelBackgroundColor=none;fontStyle=0;strokeWidth=3;30=30;" parent="1" source="78" target="74" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="565" y="680" as="sourcePoint"/>
+          <mxPoint x="665" y="580" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1970" y="1095"/>
+          </Array>
+          <mxPoint x="-44" y="-53" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="101">
+      <mxCell style="link;fontSize=24;strokeColor=#0000FF;strokeWidth=3;30=30;fontColor=#0000FF;" parent="1" source="96" target="74" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="565" y="680" as="sourcePoint"/>
+          <mxPoint x="665" y="580" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1520" y="1030"/>
+          </Array>
+          <mxPoint x="84" y="5" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="102">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="64" target="74" edge="1">
+        <mxGeometry x="402" y="347" width="100" height="100" as="geometry">
+          <mxPoint x="407" y="827" as="sourcePoint"/>
+          <mxPoint x="507" y="727" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1982" y="997"/>
+          </Array>
+          <mxPoint x="56" y="59" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="O" Note="" BiDirectional="false" id="104">
+      <mxCell style="link;fontSize=24;fontColor=#FF0000;strokeColor=#FF0000;strokeWidth=3;30=30;" parent="1" source="76" target="56" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="85" y="670" as="sourcePoint"/>
+          <mxPoint x="185" y="570" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="2140" y="1600"/>
+            <mxPoint x="1590" y="1490"/>
+          </Array>
+          <mxPoint x="-495" y="-7" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="105">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="69" target="74" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="85" y="353" as="sourcePoint"/>
+          <mxPoint x="185" y="253" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1930" y="780"/>
+          </Array>
+          <mxPoint x="8" y="185" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="106">
+      <mxCell style="link;fontSize=24;strokeColor=#0000FF;strokeWidth=3;30=30;fontColor=#0000FF;" parent="1" source="74" target="57" edge="1">
+        <mxGeometry x="80" y="190" width="100" height="100" as="geometry">
+          <mxPoint x="80" y="605" as="sourcePoint"/>
+          <mxPoint x="180" y="505" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1690" y="1300"/>
+          </Array>
+          <mxPoint x="3" y="105" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Text name="Balancing Structure" LabelPosition="Middle" oldId="107" id="107">
+      <mxCell style="text;fontSize=18;" parent="1" vertex="1">
+        <mxGeometry x="1765" y="1220" width="150" height="50" as="geometry"/>
+      </mxCell>
+    </Text>
+    <Text name="Balancing Structure" LabelPosition="Middle" id="108">
+      <mxCell style="text;fontSize=18;" parent="1" vertex="1">
+        <mxGeometry x="2125" y="1280" width="150" height="50" as="geometry"/>
+      </mxCell>
+    </Text>
+    <Text name="Balancing Structure" LabelPosition="Middle" id="109">
+      <mxCell style="text;fontSize=18;" parent="1" vertex="1">
+        <mxGeometry x="2110" y="1100" width="140" height="50" as="geometry"/>
+      </mxCell>
+    </Text>
+    <Text name="Balancing Stucture" LabelPosition="Middle" oldId="110" id="110">
+      <mxCell style="text;fontSize=18;" parent="1" vertex="1">
+        <mxGeometry x="1445" y="1120" width="150" height="50" as="geometry"/>
+      </mxCell>
+    </Text>
+    <Link name="O" Note="" BiDirectional="false" id="111">
+      <mxCell style="link;fontSize=24;fontColor=#FF0000;strokeColor=#FF0000;strokeWidth=3;30=30;" parent="1" source="74" target="60" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="80" y="290" as="sourcePoint"/>
+          <mxPoint x="180" y="190" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1300" y="970"/>
+          </Array>
+          <mxPoint x="-254" y="-120" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="113">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="91" target="57" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="620" y="420" as="sourcePoint"/>
+          <mxPoint x="720" y="320" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="990" y="1460"/>
+            <mxPoint x="1590" y="1690"/>
+          </Array>
+          <mxPoint x="330" y="219" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="114">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;fillColor=none;labelBackgroundColor=none;strokeWidth=3;30=30;strokeColor=#0000FF;" parent="1" source="76" target="69" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="620" y="420" as="sourcePoint"/>
+          <mxPoint x="720" y="320" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="2660" y="1210"/>
+            <mxPoint x="2660" y="830"/>
+            <mxPoint x="2500" y="590"/>
+            <mxPoint x="2200" y="390"/>
+            <mxPoint x="1890" y="380"/>
+          </Array>
+          <mxPoint x="-247" y="-519" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Text name="Reinforcing Structure" LabelPosition="Middle" oldId="115" id="115">
+      <mxCell style="text;fontSize=18;" parent="1" vertex="1">
+        <mxGeometry x="2000" y="600" width="130" height="50" as="geometry"/>
+      </mxCell>
+    </Text>
+    <Text name="Reinforcing Structure" LabelPosition="Middle" oldId="116" id="116">
+      <mxCell style="text;fontSize=18;" parent="1" vertex="1">
+        <mxGeometry x="1700" y="660" width="130" height="50" as="geometry"/>
+      </mxCell>
+    </Text>
+    <Text name="Reinforcing Structure" LabelPosition="Middle" oldId="117" id="117">
+      <mxCell style="text;fontSize=18;" parent="1" vertex="1">
+        <mxGeometry x="2220" y="920" width="130" height="50" as="geometry"/>
+      </mxCell>
+    </Text>
+    <Text name="Balancing Structure" LabelPosition="Middle" oldId="133" id="133">
+      <mxCell style="text;fontSize=18;" parent="1" vertex="1">
+        <mxGeometry x="1370" y="800" width="150" height="50" as="geometry"/>
+      </mxCell>
+    </Text>
+    <Link name="S" Note="" BiDirectional="false" id="140">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="96" target="76" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="609" y="420" as="sourcePoint"/>
+          <mxPoint x="709" y="320" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1420" y="1310"/>
+            <mxPoint x="1910" y="1310"/>
+            <mxPoint x="2200" y="1410"/>
+          </Array>
+          <mxPoint x="444" y="163" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="141">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="67" target="56" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="620" y="420" as="sourcePoint"/>
+          <mxPoint x="720" y="320" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1470" y="1600"/>
+          </Array>
+          <mxPoint x="-237" y="-87" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="O" Note="" BiDirectional="false" id="142">
+      <mxCell style="link;fontSize=24;fontColor=#FF0000;strokeColor=#FF0000;strokeWidth=3;30=30;" parent="1" source="67" target="60" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="620" y="420" as="sourcePoint"/>
+          <mxPoint x="720" y="320" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1550" y="1750"/>
+            <mxPoint x="950" y="1550"/>
+            <mxPoint x="750" y="1180"/>
+            <mxPoint x="810" y="810"/>
+          </Array>
+          <mxPoint x="-491" y="-428" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="143">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="64" target="76" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="620" y="420" as="sourcePoint"/>
+          <mxPoint x="720" y="320" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1950" y="760"/>
+            <mxPoint x="2380" y="1060"/>
+          </Array>
+          <mxPoint x="311" y="-7" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Skepticism of DV" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="144">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="960" y="1655" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="O" Note="" BiDirectional="false" id="145">
+      <mxCell style="link;fontSize=24;fontColor=#FF0000;strokeColor=#FF0000;strokeWidth=3;30=30;" parent="1" source="144" target="57" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="620" y="420" as="sourcePoint"/>
+          <mxPoint x="720" y="320" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1300" y="1780"/>
+            <mxPoint x="1720" y="1690"/>
+          </Array>
+          <mxPoint x="362" y="-64" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="146">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="144" target="56" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="620" y="420" as="sourcePoint"/>
+          <mxPoint x="720" y="320" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1220" y="1520"/>
+          </Array>
+          <mxPoint x="94" y="-122" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="147">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="144" target="60" edge="1">
+        <mxGeometry x="620" y="320" width="100" height="100" as="geometry">
+          <mxPoint x="620" y="420" as="sourcePoint"/>
+          <mxPoint x="720" y="320" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="750" y="1470"/>
+            <mxPoint x="710" y="960"/>
+          </Array>
+          <mxPoint x="-93" y="-368" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Text name="Balancing Stucture" LabelPosition="Middle" oldId="148" id="148">
+      <mxCell style="text;fontSize=18;" parent="1" vertex="1">
+        <mxGeometry x="1280" y="575" width="150" height="50" as="geometry"/>
+      </mxCell>
+    </Text>
+    <Variable name="Computer Malfunction" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="150">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="2380" y="1570" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="O" Note="" BiDirectional="false" id="151">
+      <mxCell style="link;fontSize=24;fontColor=#FF0000;strokeColor=#FF0000;strokeWidth=3;30=30;" parent="1" source="150" target="57" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="2120" y="1590"/>
+          </Array>
+          <mxPoint x="-184" y="-42" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="152">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="150" target="74" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="2090" y="1290"/>
+          </Array>
+          <mxPoint x="-252" y="-194" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="153">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="150" target="69" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="2740" y="1290"/>
+            <mxPoint x="2750" y="810"/>
+            <mxPoint x="2540" y="480"/>
+            <mxPoint x="2190" y="310"/>
+            <mxPoint x="1810" y="330"/>
+          </Array>
+          <mxPoint x="-313" y="-611" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Hackers" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="154">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="2360" y="1740" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="S" Note="" BiDirectional="false" id="155">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="154" target="150" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points"/>
+          <mxPoint x="-20" y="-30" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Sensor Malfunction" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="156">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="2560" y="1690" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="S" Note="" BiDirectional="false" id="157">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="156" target="150" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="158">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="150" target="144" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="2090" y="1810"/>
+            <mxPoint x="1380" y="1860"/>
+          </Array>
+          <mxPoint x="-502" y="112" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="O" Note="" BiDirectional="false" id="159">
+      <mxCell style="link;fontSize=24;fontColor=#FF0000;strokeColor=#FF0000;strokeWidth=3;30=30;" parent="1" source="150" target="67" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="2190" y="1650"/>
+          </Array>
+          <mxPoint x="-129" y="20" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Rush Hour" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="160">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="1160" y="260" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="S" Note="" BiDirectional="false" id="161">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="160" target="71" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1340" y="340"/>
+          </Array>
+          <mxPoint x="32" y="10" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Night Time" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="162">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="1400" y="230" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="S" Note="" BiDirectional="false" id="163">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="162" target="71" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1420" y="320"/>
+          </Array>
+          <mxPoint x="-6" y="15" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Driving Under the Influence" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="164">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="2710" y="1255" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="S" Note="" BiDirectional="false" id="165">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="164" target="76" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points"/>
+          <mxPoint x="-50" y="21" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Using Mobile Device" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="166">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="2700" y="1365" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="S" Note="" BiDirectional="false" id="167">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="166" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="2540" y="1390" as="targetPoint"/>
+          <Array as="points"/>
+          <mxPoint x="-20" y="1" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Fatigue" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="168">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="2640" y="1455" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="S" Note="" BiDirectional="false" id="169">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="168" target="76" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <mxPoint x="-36" y="-15" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Road Rage" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="170">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="2560" y="1545" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="S" Note="" BiDirectional="false" id="171">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="170" target="76" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <mxPoint x="-25" y="-30" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="172">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="162" target="168" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1850" y="220"/>
+            <mxPoint x="2290" y="290"/>
+            <mxPoint x="2710" y="520"/>
+            <mxPoint x="2890" y="980"/>
+            <mxPoint x="2890" y="1460"/>
+          </Array>
+          <mxPoint x="691" y="588" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="173">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="160" target="170" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1430" y="140"/>
+            <mxPoint x="2270" y="200"/>
+            <mxPoint x="2800" y="500"/>
+            <mxPoint x="2980" y="1030"/>
+            <mxPoint x="2920" y="1590"/>
+          </Array>
+          <mxPoint x="805" y="651" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="S" Note="" BiDirectional="false" id="174">
+      <mxCell style="link;fontSize=24;fontColor=#0000FF;strokeColor=#0000FF;strokeWidth=3;30=30;" parent="1" source="69" target="82" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1990" y="370"/>
+            <mxPoint x="2390" y="560"/>
+            <mxPoint x="2600" y="840"/>
+          </Array>
+          <mxPoint x="387" y="144" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+  </root>
+</InsightMakerModel>
