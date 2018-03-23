@@ -1,0 +1,499 @@
+<InsightMakerModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Setting Note="" Version="36" TimeLength="5" TimeStart="0" TimeStep="1" TimeUnits="Minutes" StrictUnits="true" StrictLinks="true" StrictAgentResolution="true" Units="" HiddenUIGroups="Validation,User Interface" SolutionAlgorithm="RK1" BackgroundColor="white" Throttle="1" Macros="" SensitivityPrimitives="" SensitivityRuns="50" SensitivityBounds="50, 80, 95, 100" SensitivityShowRuns="false" article="{&quot;comments&quot;:true, &quot;facebookUID&quot;: &quot;&quot;}" StyleSheet="{}" id="2">
+      <mxCell parent="1" vertex="1" visible="0">
+        <mxGeometry x="20" y="20" width="80" height="40" as="geometry"/>
+      </mxCell>
+    </Setting>
+    <Display name="OS Processes" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="%o" ThreeDimensional="false" Primitives="55,69,73,87,118" AutoAddPrimitives="true" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" yAxis2="" Primitives2="" showMarkers="false" showLines="true" showArea="false" legendPosition="Right" id="3">
+      <mxCell style="roundImage;image=/builder/images/DisplayFull.png;" parent="1" vertex="1" visible="0">
+        <mxGeometry x="50" y="20" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Variable name="CPU Cores" Note="" Equation="7" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="true" SliderMax="8" SliderMin="1" SliderStep="1" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="55">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="160" y="490" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Process In Waiting" Note="" Equation="[OS System].FindState([Waiting]).Count()" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="69">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="770" y="45" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Agents name="OS System" Note="" Size="4" GeoWrap="false" GeoDimUnits="Unitless" GeoWidth="200" GeoHeight="100" Placement="Random" PlacementFunction="{Rand()*Width(Self), Rand()*Height(Self)}" Network="None" NetworkFunction="RandBoolean(0.02)" Agent="57" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" ShowSlider="true" SliderMax="8" SliderMin="1" SliderStep="1" id="73">
+      <mxCell style="agents" parent="1" vertex="1">
+        <mxGeometry x="160" y="70" width="170" height="80" as="geometry"/>
+      </mxCell>
+    </Agents>
+    <Folder name="Process" Note="" Type="Agent" Solver="{&quot;enabled&quot;: false, &quot;algorithm&quot;: &quot;RK1&quot;, &quot;timeStep&quot;: 1}" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" AgentBase="" id="57">
+      <mxCell style="folder;image=None;shape=rectangle;" parent="1" vertex="1">
+        <mxGeometry x="400" y="190" width="790" height="540" as="geometry">
+          <mxRectangle x="840" y="480" width="70" height="20" as="alternateBounds"/>
+        </mxGeometry>
+      </mxCell>
+    </Folder>
+    <State name="Waiting" Note="" Active="false" Residency="0" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="59">
+      <mxCell style="state" parent="57" vertex="1">
+        <mxGeometry x="270" y="320" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </State>
+    <State name="Running" Note="" Active="false" Residency="0" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="60">
+      <mxCell style="state" parent="57" vertex="1">
+        <mxGeometry x="510" y="320" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </State>
+    <State name="Blocked" Note="" Active="false" Residency="0" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="61">
+      <mxCell style="state" parent="57" vertex="1">
+        <mxGeometry x="390" y="440" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </State>
+    <Transition name="Start" Note="" Trigger="Timeout" Value="if [CPU Cores] &gt; [# Of Running Processes] then\n    1\nelse\n    0\nend if" Repeat="false" Recalculate="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="64">
+      <mxCell style="transition" parent="57" source="59" target="60" edge="1">
+        <mxGeometry x="250" y="170" width="100" height="100" as="geometry">
+          <mxPoint x="250" y="275" as="sourcePoint"/>
+          <mxPoint x="350" y="175" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="470" y="385"/>
+          </Array>
+          <mxPoint y="20" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Transition>
+    <Transition name="Interrupted" Note="" Trigger="Timeout" Value="if [Block/Interrupt] == 1 then\n    1\nelse\n    0\nend if" Repeat="false" Recalculate="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="65">
+      <mxCell style="transition" parent="57" source="60" target="59" edge="1">
+        <mxGeometry x="220" y="240" width="100" height="100" as="geometry">
+          <mxPoint x="250" y="270" as="sourcePoint"/>
+          <mxPoint x="350" y="170" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="470" y="290"/>
+          </Array>
+          <mxPoint y="-30" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Transition>
+    <Transition name="I/O Block" Note="" Trigger="Timeout" Value="if [Block/Interrupt] == 2 then\n    [Block/Unblock Probability]\nelse\n    0\nend if" Repeat="false" Recalculate="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="66">
+      <mxCell style="transition" parent="57" source="60" target="61" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint x="250" y="270" as="sourcePoint"/>
+          <mxPoint x="350" y="170" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="590" y="400"/>
+          </Array>
+          <mxPoint x="50" y="10" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Transition>
+    <Transition name="Unblock" Note="" Trigger="Timeout" Value="[Block/Unblock Probability]" Repeat="false" Recalculate="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="67">
+      <mxCell style="transition" parent="57" source="61" target="59" edge="1">
+        <mxGeometry x="-180" y="50" width="100" height="100" as="geometry">
+          <mxPoint x="190" y="270" as="sourcePoint"/>
+          <mxPoint x="290" y="170" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="290" y="460"/>
+          </Array>
+          <mxPoint x="-50" y="10" as="offset"/>
+        </mxGeometry>
+      </mxCell>
+    </Transition>
+    <State name="New" Note="" Active="True" Residency="0" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="92">
+      <mxCell style="state" parent="57" vertex="1">
+        <mxGeometry x="240" y="180" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </State>
+    <Transition name="Admitted" Note="" Trigger="Timeout" Value="IfThenElse([# Of Running Processes] &lt; [CPU Cores], 1, 0)" Repeat="false" Recalculate="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="93">
+      <mxCell style="transition" parent="57" source="92" target="59" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="270" y="190"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Transition>
+    <State name="Terminated" Note="" Active="false" Residency="0" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="94">
+      <mxCell style="state" parent="57" vertex="1">
+        <mxGeometry x="540" y="180" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </State>
+    <Transition name="Done" Note="" Trigger="Timeout" Value="IfThenElse([Process Job Left] &lt;= 0, 1, 0)" Repeat="false" Recalculate="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="96">
+      <mxCell style="transition" parent="57" source="60" target="94" edge="1">
+        <mxGeometry x="20" y="70" width="100" height="100" as="geometry">
+          <mxPoint x="20" y="170" as="sourcePoint"/>
+          <mxPoint x="120" y="70" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="590" y="260"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Transition>
+    <Stock name="Process Job Left" Note="" InitialValue="10" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="97">
+      <mxCell style="stock" parent="57" vertex="1">
+        <mxGeometry x="420" y="33" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Flow name="Work Done" Note="" FlowRate="if [Running] then\n    1\nelse\n    0\nend if" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="98">
+      <mxCell style="flow" parent="57" source="97" edge="1">
+        <mxGeometry x="-710" y="-317" width="100" height="100" as="geometry">
+          <mxPoint x="-710" y="-217" as="sourcePoint"/>
+          <mxPoint x="650" y="53" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Link name="Link" Note="" BiDirectional="false" id="99">
+      <mxCell style="link" parent="57" source="97" target="96" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="480" y="210"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Action name="Add Process" Note="" Trigger="Probability" Value="0.5" Repeat="true" Recalculate="false" Action="IfThenElse([OS System].FindState([Running]).Count() &lt; [CPU Cores], [OS System].add(self), 0)" id="123">
+      <mxCell style="action" parent="57" vertex="1">
+        <mxGeometry x="30" y="185" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Action>
+    <Flow name="Reset Time" Note="" FlowRate="If [Waiting] then \n    [Process Running Time]\nelse if [Blocked] then\n    [Process Running Time]\nelse\n    0\nend if" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="133">
+      <mxCell style="flow" parent="57" source="131" edge="1">
+        <mxGeometry x="-380" y="-197" width="100" height="100" as="geometry">
+          <mxPoint x="-380" y="-97" as="sourcePoint"/>
+          <mxPoint x="70" y="53.00006509192937" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Stock name="Process Running Time" Note="" InitialValue="0" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="131">
+      <mxCell style="stock" parent="57" vertex="1">
+        <mxGeometry x="180" y="33" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Flow name="Run Time" Note="" FlowRate="if [Running] then \n    1\nelse \n    0\nend if" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="132">
+      <mxCell style="flow" parent="57" target="131" edge="1">
+        <mxGeometry x="-380" y="-197" width="100" height="100" as="geometry">
+          <mxPoint x="400" y="53.000036232593146" as="sourcePoint"/>
+          <mxPoint x="-380" y="-97" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Link name="Link" Note="" BiDirectional="false" id="134">
+      <mxCell style="link" parent="57" source="59" target="133" edge="1">
+        <mxGeometry x="-400" y="-190" width="100" height="100" as="geometry">
+          <mxPoint x="-400" y="-90" as="sourcePoint"/>
+          <mxPoint x="-300" y="-190" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="170" y="210"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="135">
+      <mxCell style="link" parent="57" source="61" target="133" edge="1">
+        <mxGeometry x="-400" y="-190" width="100" height="100" as="geometry">
+          <mxPoint x="-400" y="-90" as="sourcePoint"/>
+          <mxPoint x="-300" y="-190" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="150" y="380"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="136">
+      <mxCell style="link" parent="57" source="60" target="132" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Action name="Remove" Note="" Trigger="Probability" Value="0.5" Repeat="true" Recalculate="false" Action="if [Terminated] then\n    self.remove()\nend if" id="145">
+      <mxCell style="action" vertex="1" parent="57">
+        <mxGeometry x="500" y="90" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Action>
+    <Link name="Link" Note="" BiDirectional="false" id="146">
+      <mxCell style="link" edge="1" parent="57" source="94" target="145">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Block/Interrupt" Note="" Equation="IfThenElse([Process Running Time] &gt;= [Quantum Time], 1, 2)" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="151">
+      <mxCell style="variable" vertex="1" parent="57">
+        <mxGeometry x="650" y="310" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="152">
+      <mxCell style="link" edge="1" parent="57" source="151" target="65">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="154">
+      <mxCell style="link" edge="1" parent="57" source="131" target="151">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="310" y="20"/>
+            <mxPoint x="610" y="10"/>
+            <mxPoint x="730" y="50"/>
+            <mxPoint x="730" y="250"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="155">
+      <mxCell style="link" edge="1" parent="57" source="151" target="66">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="156">
+      <mxCell style="link" edge="1" parent="57" source="60" target="98">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="750" y="200"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="107">
+      <mxCell style="link" parent="1" source="55" target="93" edge="1">
+        <mxGeometry x="-300" y="-100" width="100" height="100" as="geometry">
+          <mxPoint x="-300" as="sourcePoint"/>
+          <mxPoint x="-200" y="-100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="480" y="520"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="111">
+      <mxCell style="link" parent="1" source="73" target="64" edge="1">
+        <mxGeometry x="-250" y="-55" width="100" height="100" as="geometry">
+          <mxPoint x="-250" y="45" as="sourcePoint"/>
+          <mxPoint x="-150" y="-55" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="370" y="220"/>
+            <mxPoint x="550" y="340"/>
+            <mxPoint x="860" y="350"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="113">
+      <mxCell style="link" parent="1" source="55" target="64" edge="1">
+        <mxGeometry x="-300" y="-100" width="100" height="100" as="geometry">
+          <mxPoint x="-300" as="sourcePoint"/>
+          <mxPoint x="-200" y="-100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="520" y="620"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Running Processes" Note="" Equation="[OS System].FindState([Running]).Count()" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="118">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="400" y="30" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="119">
+      <mxCell style="link" parent="1" source="73" target="118" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Flow name="Process Terminated" Note="" FlowRate="IfThenElse([# Of Running Processes] &gt; 0, [OS System].FindState([Terminated]).Count() + [OS System].FindState([Blocked]).Count() + [OS System].FindState([Waiting]).Count(), 0)" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="116">
+      <mxCell style="flow" parent="1" source="87" edge="1">
+        <mxGeometry x="-150" y="115" width="100" height="100" as="geometry">
+          <mxPoint x="-150" y="215" as="sourcePoint"/>
+          <mxPoint x="1200" y="915" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Stock name="# Of Running Processes" Note="" InitialValue="0" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="87">
+      <mxCell style="stock" parent="1" vertex="1">
+        <mxGeometry x="950" y="895" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Flow name="Process Running" Note="" FlowRate="[OS System].Value([Running])" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="108">
+      <mxCell style="flow" parent="1" target="87" edge="1">
+        <mxGeometry x="-490" y="65" width="100" height="100" as="geometry">
+          <mxPoint x="760" y="915" as="sourcePoint"/>
+          <mxPoint x="-490" y="165" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Link name="Link" Note="" BiDirectional="false" id="114">
+      <mxCell style="link" parent="1" source="87" target="93" edge="1">
+        <mxGeometry x="-500" y="-120" width="100" height="100" as="geometry">
+          <mxPoint x="-500" y="-20" as="sourcePoint"/>
+          <mxPoint x="-400" y="-120" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="520" y="730"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="115">
+      <mxCell style="link" parent="1" source="87" target="64" edge="1">
+        <mxGeometry x="-300" y="-100" width="100" height="100" as="geometry">
+          <mxPoint x="-300" as="sourcePoint"/>
+          <mxPoint x="-200" y="-100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1000" y="690"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="120">
+      <mxCell style="link" parent="1" source="73" target="108" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="90" y="340"/>
+            <mxPoint x="180" y="720"/>
+            <mxPoint x="530" y="900"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="121">
+      <mxCell style="link" parent="1" source="73" target="116" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="70" y="300"/>
+            <mxPoint x="90" y="680"/>
+            <mxPoint x="420" y="960"/>
+            <mxPoint x="960" y="1010"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="124">
+      <mxCell style="link" parent="1" source="73" target="123" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="125">
+      <mxCell style="link" parent="1" source="55" target="123" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Block/Unblock Probability" Note="" Equation="0.1" Units="Unitless" MaxConstraintUsed="true" MinConstraintUsed="false" MaxConstraint="1" MinConstraint="0" ShowSlider="true" SliderMax="1" SliderMin="0.1" SliderStep="0.1" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="126">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="1280" y="705" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="127">
+      <mxCell style="link" parent="1" source="126" target="66" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="1210" y="690"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="128">
+      <mxCell style="link" parent="1" source="126" target="67" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="980" y="800"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Quantum Time" Note="" Equation="2" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="true" SliderMax="100" SliderMin="1" SliderStep="1" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="129">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="1330" y="500" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="137">
+      <mxCell style="link" parent="1" source="73" target="69" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="620" y="130"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Process Running Time" Note="" Equation="[OS System].Value([Process Running Time])" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="138">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="580" y="45" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="139">
+      <mxCell style="link" parent="1" source="73" target="138" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Process Job Left" Note="" Equation="[OS System].Value([Process Job Left])" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="140">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="1000" y="45" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="141">
+      <mxCell style="link" edge="1" parent="1" source="73" target="140">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="670" y="180"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="142">
+      <mxCell style="link" edge="1" parent="1" source="60" target="108">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Display name="Agent Data" Note="" Type="Tabular" xAxis="%o" yAxis="%o" yAxis2="" showMarkers="true" showLines="false" showArea="false" ThreeDimensional="false" Primitives="118,69,138,140" Primitives2="" AutoAddPrimitives="false" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" FlipHorizontal="false" FlipVertical="false" LabelPosition="Bottom" legendPosition="Automatic" id="144">
+      <mxCell style="display" vertex="1" parent="1" visible="0">
+        <mxGeometry x="10" y="10" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Link name="Link" Note="" BiDirectional="false" id="148">
+      <mxCell style="link" edge="1" parent="1" source="129" target="151">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="1147" y="505" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+  </root>
+</InsightMakerModel>
